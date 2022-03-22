@@ -1,0 +1,16 @@
+[package]
+name = "bulkrename"
+version = "1.0.0"
+edition = "2021"
+authors = ["Jamie Quigley <jamie@quigley.xyz>"]
+description = "Rename files in a directory in bulk"
+repository = "https://github.com/Sciencentistguy/bulkrename"
+license = "MPL-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+color-eyre = "0.6.1"
+question = "0.2.2"
+
+[features]
