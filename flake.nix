@@ -19,7 +19,7 @@
         rustc = pkgs.rustc;
       };
     in {
-      packages.default = rustPlatform.buildRustPackage {
+      packages.bulkrename = rustPlatform.buildRustPackage {
         pname = "bulkrename";
         version = "0.1.0";
 
@@ -34,5 +34,6 @@
           license = licenses.mit;
         };
       };
+      packages.default = self.packages.${system}.bulkrename;
     });
 }
