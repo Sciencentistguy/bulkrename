@@ -5,6 +5,7 @@ use std::process::Command;
 
 use color_eyre::Result;
 use question::{Answer, Question};
+use tap::Tap;
 
 fn main() {
     let r = real_main();
@@ -53,7 +54,8 @@ fn real_main() -> Result<()> {
         .map(|x| x.as_str())
         .zip(renames.split('\n'))
         .filter(|(name, new)| name != new)
-        .collect::<Vec<_>>();
+        .collect::<Vec<_>>()
+        .tap_mut(|x| x.sort_unstable());
 
     for (name, new) in &renames {
         println!("'{name}' -> '{new}'");

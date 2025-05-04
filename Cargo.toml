@@ -12,5 +12,6 @@ license = "MPL-2.0"
 [dependencies]
 color-eyre = "0.6.1"
 question = "0.2.2"
+tap = "1.0.1"
 
 [features]
