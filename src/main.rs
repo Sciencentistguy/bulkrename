@@ -57,6 +57,10 @@ fn real_main() -> Result<()> {
         .collect::<Vec<_>>()
         .tap_mut(|x| x.sort_unstable());
 
+    if renames.is_empty() {
+        return Ok(());
+    }
+
     for (name, new) in &renames {
         println!("'{name}' -> '{new}'");
     }
