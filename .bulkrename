@@ -1,9 +1,0 @@
-.bulkrename
-r2
-r
-target
-Cargo.lock
-src
-Cargo.toml
-.gitignore
-.git

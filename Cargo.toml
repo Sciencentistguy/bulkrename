@@ -10,8 +10,8 @@ license = "MPL-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-color-eyre = "0.6.1"
 question = "0.2.2"
 tap = "1.0.1"
+tempfile = "3.20.0"
 
 [features]
