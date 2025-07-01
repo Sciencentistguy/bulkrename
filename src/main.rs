@@ -1,7 +1,7 @@
-use std::{fs::File, io::Read};
 use std::io::Write;
 use std::path::Path;
 use std::process::Command;
+use std::{fs::File, io::Read};
 
 use question::{Answer, Question};
 use tap::Tap;
@@ -9,7 +9,8 @@ use tap::Tap;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let names: Vec<_> = std::fs::read_dir(".")?
         .map(|x| x.map(|x| x.file_name().to_string_lossy().into_owned()))
-        .collect::<Result<_, _>>()?;
+        .collect::<Result<Vec<_>, _>>()?
+        .tap_mut(|x| x.sort_unstable());
 
     let mut file = tempfile::NamedTempFile::new()?;
 
